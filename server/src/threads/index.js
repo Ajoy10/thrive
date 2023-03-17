@@ -16,8 +16,8 @@ router.get("/all", (req, res) => {
 // POST /posts
 router.post("/", (req, res) => {
   // Verify user can post i.e. logged in
-  const { title, content } = req.body;
-  CreateThread(title, content)
+  const { title, content, topicId } = req.body;
+  CreateThread(title, content, topicId)
     .then((result) => {
       res.send(result);
     })

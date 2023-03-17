@@ -11,6 +11,10 @@ const Thread = new Schema(
       type: String,
       default: "",
     },
+    topic: {
+      type: Schema.Types.ObjectId,
+      ref: "Topic",
+    },
   },
   { timestamps: true }
 );
