@@ -1,7 +1,15 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const { postRoute } = require("./src/posts");
+
+require("dotenv").config();
+
+require("./src/utils/connectDB");
+
+const { threadRouter } = require("./src/threads");
+const { topicRouter } = require("./src/topics");
+
+app.use(express.json());
 
 // Setting up CORS
 
@@ -25,7 +33,8 @@ app.use(cors(corsOption));
 
 // Routes
 
-app.use("/posts", postRoute);
+app.use("/threads", threadRouter);
+app.use("/topics", topicRouter);
 
 //#region Server listening Setup
 
