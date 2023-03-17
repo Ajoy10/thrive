@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const { postRoute } = require("./src/posts");
 
 // Setting up CORS
 
@@ -21,6 +22,10 @@ const corsOption = {
 };
 
 app.use(cors(corsOption));
+
+// Routes
+
+app.use("/posts", postRoute);
 
 //#region Server listening Setup
 
