@@ -8,7 +8,7 @@ import Signup from "./components/Signup/Signup";
 import { auth } from "./firebase";
 
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import UI from "./page/UI";
 
 function App() {
 
@@ -28,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/ui" element={<UI />} />
           <Route path="/" element={<Home name={userName} />} />
         </Routes>
       </Router>
