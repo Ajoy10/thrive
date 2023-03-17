@@ -8,8 +8,10 @@ import Signup from "./components/Signup/Signup";
 import { auth } from "./firebase";
 
 import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function App() {
+
   const [userName, setUserName] = useState("");
 
   useEffect(() => {
@@ -32,5 +34,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
