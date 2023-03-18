@@ -8,6 +8,7 @@ import "./Topic.css";
 import config from "../config.json";
 import { AuthContext } from "../context/AuthContext";
 import Button from "../components/Button";
+import Empty from "../components/Empty";
 
 export default function Topic() {
   const { id } = useParams();
@@ -37,21 +38,25 @@ export default function Topic() {
   return (
     <section id="topic-page">
       <h2>{topicName || "Threads"}</h2>
-      <div className="thread-list">
-        {threads.map((thread, id) => {
-          return (
-            <ThreadCard
-              title={thread.title}
-              content={thread.content}
-              commentCount={0}
-              username={"John doe"}
-              id={thread._id}
-              key={id}
-              date={thread.createdAt}
-            />
-          );
-        })}
-      </div>
+      {threads.length === 0 ? (
+        <Empty />
+      ) : (
+        <div className="thread-list">
+          {threads.map((thread, id) => {
+            return (
+              <ThreadCard
+                title={thread.title}
+                content={thread.content}
+                commentCount={0}
+                username={"Deep Kore"}
+                id={thread._id}
+                key={id}
+                date={thread.createdAt}
+              />
+            );
+          })}
+        </div>
+      )}
       <div className="create-thread-button">
         <Button
           label={"Create a thread"}

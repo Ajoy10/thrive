@@ -9,6 +9,7 @@ import "./Threads.css";
 import config from "../config.json";
 import { AuthContext } from "../context/AuthContext";
 import ReplyTo from "../components/ReplyTo";
+import Empty from "../components/Empty";
 
 export default function Threads() {
   const { id } = useParams();
@@ -47,21 +48,26 @@ export default function Threads() {
             title={thread.title}
             content={thread.content}
             date={thread.createdAt}
+            username={"Deep Kore"}
           />
         )}
       </div>
-      <div className="reply-list">
-        {comments.map((reply, ind) => {
-          return (
-            <ReplyCard
-              content={reply.content}
-              // username={"John doe"}
-              key={ind}
-              date={reply.createdAt}
-            />
-          );
-        })}
-      </div>
+      {comments.length == 0 ? (
+        <Empty />
+      ) : (
+        <div className="reply-list">
+          {comments.map((reply, ind) => {
+            return (
+              <ReplyCard
+                content={reply.content}
+                // username={"Deep "}
+                key={ind}
+                date={reply.createdAt}
+              />
+            );
+          })}
+        </div>
+      )}
 
       <div className="reply-section">
         <ReplyTo threadId={id} />

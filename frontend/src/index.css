@@ -14,3 +14,31 @@ body{
  
 }
 
+
+.ip-group{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+ input, textarea{
+  height: 3em;
+  color: white;
+  background-color: #3F4C51;
+  font-family: 'Lato', sans-serif;
+  border: none;
+  border-radius: 4px;
+  padding-left: 8px;
+  padding-top: 4px;
+  font-size: 16px;
+}
+.ip-group textarea{
+  height: 9em;
+}
+
+button{
+  margin-top: 20px;
+}
+
+
+
