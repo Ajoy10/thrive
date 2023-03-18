@@ -1,7 +1,8 @@
 input {
     background-color: #3F4C51;
-    width: auto;
+    padding: 10px;
     height: auto;
+    border-radius: 8px;
 
 }
 

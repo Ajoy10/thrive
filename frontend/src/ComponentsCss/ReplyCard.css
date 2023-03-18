@@ -1,0 +1,26 @@
+.reply-card {
+    align-items: center;
+    padding: 10px;
+    background-color: #182220;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+.meta {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.reply-card-meta-item {
+
+    align-items: center;
+    padding: 5px;
+
+
+}
+
+
+textarea {
+    background-color: #3F4C51;
+}

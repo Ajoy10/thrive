@@ -1,8 +1,10 @@
 import React from "react";
 
+
 import TopicCard from "../components/TopicCard";
 import SearchBar from "../components/SearchBar";
 import ThreadCard from "../components/ThreadCard";
+import ReplyCard from "../components/ReplyCard";
 import Button from "../components/Button";
 
 export default function UI() {
@@ -25,9 +27,13 @@ export default function UI() {
         username="abcd"
       />
       <br></br>
-      <Button
-        label="create a topic"
+      <Button icon="fa fa-plus" label="Create a topic" />
 
+      <ReplyCard
+        title="hello"
+        content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur nesciunt, quos dicta suscipit totam sit ea neque? Distinctio, totam architecto."
+        date={`Today`}
+        commentCount={20}
       />
     </div>
   );

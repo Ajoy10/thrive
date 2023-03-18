@@ -1,4 +1,11 @@
 button {
+    padding: 10px;
     background-color: #6AC573;
     border-radius: 4px;
+    margin: 5px;
+
+}
+
+button:hover {
+    background-color: #46f757;
 }
