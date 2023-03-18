@@ -1,9 +1,9 @@
 import "../ComponentsCss/button.css";
 import React from "react";
 import { Icon, InlineIcon } from "@iconify/react";
-const Button = ({ label, onClick, icon }) => {
+const Button = ({ label, onClick, icon, ...props }) => {
   return (
-    <button onClick={onClick}>
+    <button onClick={onClick} {...props}>
       {icon || <InlineIcon icon={"carbon:user-avatar"} />}
       {label}
     </button>

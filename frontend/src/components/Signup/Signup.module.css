@@ -2,17 +2,16 @@
   height: 100%;
   min-height: 100vh;
   width: 100%;
-  background-color: #202142;
+  background-color: #273135;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .innerBox {
-  min-width: 480px;
   height: fit-content;
   width: fit-content;
-  background-color: #fff;
+  background-color: #182220;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
   padding: 30px;
   border-radius: 10px;
@@ -37,7 +36,7 @@
 .footer button {
   outline: none;
   border: none;
-  background-color: #9900ff;
+  background-color: #509957;
   color: #fff;
   border-radius: 5px;
   font-weight: bold;
@@ -53,17 +52,17 @@
 }
 
 .footer button:hover {
-  background-color: #aa2aff;
+  background-color: #509957;
 }
 
 .footer p {
   font-weight: 700;
-  color: #000;
+  color: #FFF;
 }
 
 .footer p span a {
   font-weight: bold;
-  color: #9900ff;
+  color: #509957;
   letter-spacing: 1px;
   font-size: 1rem;
   text-decoration: none;

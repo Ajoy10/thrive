@@ -11,6 +11,8 @@ import { AuthContext } from "../context/AuthContext";
 export default function ReplyTo({ threadId }) {
   const [comment, setComment] = useState("");
 
+  const [submitting, setSubmitting] = useState(false);
+
   const { token } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -19,6 +21,7 @@ export default function ReplyTo({ threadId }) {
     e.preventDefault();
 
     if (token) {
+      setSubmitting(true);
       axios
         .post(
           config.uri + `/comments/`,
@@ -32,7 +35,10 @@ export default function ReplyTo({ threadId }) {
         .then((res) => {
           navigate(0);
         })
-        .catch((err) => alert(err));
+        .catch((err) => alert(err))
+        .finally(() => {
+          setSubmitting(true);
+        });
     } else {
       alert("Please login to comment!");
     }
@@ -42,7 +48,12 @@ export default function ReplyTo({ threadId }) {
     <form className="reply-to" onSubmit={commentHandler}>
       <h3>Add your reply</h3>
       <textarea onChange={(e) => setComment(e.target.value)} value={comment} />
-      <Button label={"Add comment"} icon={<></>} onClick={commentHandler} />
+      <Button
+        disabled={submitting}
+        label={"Add comment"}
+        icon={<></>}
+        onClick={commentHandler}
+      />
     </form>
   );
 }
