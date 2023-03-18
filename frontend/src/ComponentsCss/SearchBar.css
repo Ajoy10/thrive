@@ -1,12 +1,26 @@
+
 div {
-    background-color: red;
+    color: #FFFFFF;
 }
 
-input {
-    background-color: #3F4C51
+.search-bar{
+    display: flex;
+    margin-bottom: 10px;
 }
 
-button {
-    background-color: #6AC573;
-    border-radius: 10%;
+.search-bar .button{
+    background-color: #509957;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 4px;
+}
+
+.search-bar input{
+    background-color: #3F4C51;
+
+    border: none;
+    color: white;
+    padding: 10px;
+    margin-right: 8px;
+    width: 100%;
 }

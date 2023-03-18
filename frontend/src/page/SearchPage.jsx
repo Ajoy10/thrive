@@ -1,26 +1,33 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import TopicCard from "../TopicCard";
-import "../../ComponentsCss/Home.css";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import TopicCard from "../components/TopicCard";
+import "../ComponentsCss/Home.css";
 
-import config from "../../config.json";
+import config from "../config.json";
 
 import axios from "axios";
-import { AuthContext } from "../../context/AuthContext";
-import Button from "../Button";
+import { AuthContext } from "../context/AuthContext";
+import Button from "../components/Button";
 import { InlineIcon } from "@iconify/react";
-import SearchBar from "../SearchBar";
+import SearchBar from "../components/SearchBar";
 
-function Home(props) {
+function SearchPage(props) {
   const { token } = useContext(AuthContext);
   const headers = {};
+  function useQuery() {
+    const { search } = useLocation();
+
+    return React.useMemo(() => new URLSearchParams(search), [search]);
+  }
+  const query = useQuery();
   const [topics, setTopics] = useState([]);
+  const term = query.get("term");
   if (token) {
     headers.Authorization = `Bearer ${token}`;
   }
   useEffect(() => {
     axios
-      .get(config.uri + "/topics/all", {
+      .get(config.uri + "/topics/search?term=" + term, {
         headers: headers,
       })
       .then((res) => {
@@ -29,7 +36,7 @@ function Home(props) {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [term]);
 
   const navigate = useNavigate();
 
@@ -39,23 +46,6 @@ function Home(props) {
 
   return (
     <div className="home">
-      <div>
-      <div>
-        <h1>
-          <Link to="/login">Login</Link>
-        </h1>
-        <br />
-        <h1>
-          <Link to="/signup">Signup</Link>
-        </h1>
-      </div>
-
-      <br />
-      <br />
-      <br />
-
-      <h2>{props.name ? `Welcome - ${props.name}` : "Login please"}</h2>
-    </div>
       {/* <h3>Search Topics</h3> */}
 
       <div className="add-button">
@@ -71,7 +61,7 @@ function Home(props) {
       </section>
 
       <section id="trending-topics-section-list">
-        <h2>Trending Topics</h2>
+        <h2>Search result</h2>
         <div className="trending-topics-section-list">
           {/* <TopicCard title={"Interview Prep"} desc="Anything related to interview are welcome!" postCount={20} onlineCount={5}/>
       <TopicCard title={"Football"} desc="Want to discuss about football? This is the place!" postCount={100} onlineCount={25}/> */}
@@ -93,26 +83,8 @@ function Home(props) {
           })}
         </div>
       </section>
-
-      {/* <section id="trending-topics-section-list">
-        <h2>For you</h2>
-        <div className="trending-topics-section-list">
-          <TopicCard
-            title={"Interview Prep"}
-            desc="Anything related to interview are welcome!"
-            postCount={20}
-            onlineCount={5}
-          />
-          <TopicCard
-            title={"Football"}
-            desc="Want to discuss about football? This is the place!"
-            postCount={100}
-            onlineCount={25}
-          />
-        </div>
-      </section> */}
     </div>
   );
 }
 
-export default Home;
+export default SearchPage;

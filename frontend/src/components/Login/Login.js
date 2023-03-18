@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
@@ -6,6 +6,7 @@ import InputControl from "../InputControl/InputControl";
 import { auth } from "../../firebase";
 
 import styles from "./Login.module.css";
+import { AuthContext } from "../../context/AuthContext";
 
 function Login() {
   const navigate = useNavigate();
@@ -15,6 +16,8 @@ function Login() {
   });
   const [errorMsg, setErrorMsg] = useState("");
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
+
+  const { token, setToken } = useContext(AuthContext);
 
   const handleSubmission = () => {
     if (!values.email || !values.pass) {
@@ -27,7 +30,7 @@ function Login() {
     signInWithEmailAndPassword(auth, values.email, values.pass)
       .then(async (res) => {
         setSubmitButtonDisabled(false);
-        
+
         navigate("/");
       })
       .catch((err) => {
@@ -35,6 +38,11 @@ function Login() {
         setErrorMsg(err.message);
       });
   };
+
+  if (token) {
+    // console.log(token);
+    return <>Already logged in!</>;
+  }
   return (
     <div className={styles.container}>
       <div className={styles.innerBox}>

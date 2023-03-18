@@ -6,6 +6,10 @@ const Topic = new Schema({
     type: String,
     default: "",
   },
+  description: {
+    type: String,
+    default: "",
+  },
 });
 
 module.exports = mongoose.model("Topic", Topic);
