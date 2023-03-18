@@ -1,0 +1,22 @@
+.thread-card {
+
+    box-sizing: border-box;
+    background-color: #182220;
+    color: white;
+    border-radius: 8px;
+    width: 30%;
+    border-color: black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+
+}
+
+.thread-card-meta {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+
+
+}

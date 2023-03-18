@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./components/Home/Home";
@@ -9,16 +9,22 @@ import { auth } from "./firebase";
 
 import "./App.css";
 import UI from "./page/UI";
+import { AuthContext } from "./context/AuthContext";
 
 function App() {
-
   const [userName, setUserName] = useState("");
+
+  const { token, setToken } = useContext(AuthContext);
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
+        setToken(user.getIdToken());
         setUserName(user.displayName);
-      } else setUserName("");
+      } else {
+        setUserName("");
+        setToken(null);
+      }
     });
   }, []);
 
@@ -35,6 +41,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;

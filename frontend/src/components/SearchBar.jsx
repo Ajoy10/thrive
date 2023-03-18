@@ -1,3 +1,4 @@
+import "../ComponentsCss/SearchBar.css"
 export default function SearchBar() {
   return (
     <div>

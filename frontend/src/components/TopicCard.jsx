@@ -10,7 +10,7 @@ export default function TopicCard({ title, desc, postCount, onlineCount }) {
       </div>
       <div className='topic-stats'>
         <p><InlineIcon icon={"carbon:chat"} /> {postCount} posts</p>
-        <p ><InlineIcon icon={"carbon:circle-solid"} /> {onlineCount} online</p>
+        <p ><InlineIcon icon={"carbon:circle-solid"} style={{ color: "#509957" }} /> {onlineCount} online</p>
       </div>
     </div>
   );
