@@ -8,6 +8,7 @@ require("./src/utils/connectDB");
 
 const { threadRouter } = require("./src/threads");
 const { topicRouter } = require("./src/topics");
+const { commentRouter } = require("./src/comments");
 
 app.use(express.json());
 
@@ -35,6 +36,7 @@ app.use(cors(corsOption));
 
 app.use("/threads", threadRouter);
 app.use("/topics", topicRouter);
+app.use("/comments", commentRouter);
 
 //#region Server listening Setup
 

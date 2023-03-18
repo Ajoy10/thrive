@@ -14,6 +14,15 @@ router.get("/all", (req, res) => {
     });
 });
 
+router.get("/:id", (req, res) => {
+  const { id } = req.params;
+  GetTopic.ByID(id)
+    .then((result) => res.send(result))
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 // POST /posts
 router.post("/", (req, res) => {
   // Verify user can post i.e. logged in

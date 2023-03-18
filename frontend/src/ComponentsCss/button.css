@@ -1,4 +1,6 @@
 button {
     background-color: #6AC573;
     border-radius: 4px;
+    padding:18px 40px;
+    border:none;
 }

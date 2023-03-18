@@ -1,3 +1,4 @@
+import { InlineIcon } from "@iconify/react";
 import React, { useState } from "react";
 
 const ReplyCard = ({ title, content, date, commentCount }) => {
@@ -17,14 +18,14 @@ const ReplyCard = ({ title, content, date, commentCount }) => {
       <h3>{title}</h3>
       <p>{content}</p>
       <div className="meta">
-      <div className="reply-card-meta-item">
+        <div className="reply-card-meta-item">
           <InlineIcon icon={"carbon:time"} />
-            <span>{date}</span>
-      </div>
-      <div className="reply-card-meta-item">
+          <span>{date || "Today"}</span>
+        </div>
+        <div className="reply-card-meta-item">
           <InlineIcon icon={"carbon:chat"} />
-            <span>{commentCount}</span>
-      </div>
+          <span>{commentCount || 0}</span>
+        </div>
       </div>
       <textarea
         rows="5"

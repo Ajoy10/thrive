@@ -12,4 +12,8 @@ const All = () => {
 //   return Thread.find({ topic: topic });
 // };
 
-module.exports = { ByID, All };
+const ByTopicID = (id) => {
+  return Thread.find({ topic: id });
+};
+
+module.exports = { ByID, ByTopicID, All };

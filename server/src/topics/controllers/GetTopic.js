@@ -1,3 +1,4 @@
+const Thread = require("../../threads/models/Thread");
 const Topic = require("../models/Topic");
 
 const ByID = (id) => {
