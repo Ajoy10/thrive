@@ -1,0 +1,12 @@
+.trending-topics-section-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+}
+
+.trending-topics-section h2{
+    margin-bottom: 16px;
+}

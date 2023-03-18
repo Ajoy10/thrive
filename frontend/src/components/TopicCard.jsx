@@ -5,7 +5,7 @@ export default function TopicCard({ title, desc, postCount, onlineCount }) {
   return (
     <div className='topic-card'>
       <div className='topic-details'>
-        <h2>{title}</h2>
+        <h3>{title}</h3>
         <p>{desc}</p>
       </div>
       <div className='topic-stats'>
