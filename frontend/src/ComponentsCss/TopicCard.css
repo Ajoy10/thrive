@@ -9,8 +9,8 @@
     background-color: #182220;
     color: white;
     border-radius: 8px;
-    width: 30%;
     /* align: center; */
+    width: 100%;
 }
 
 .topic-details {
