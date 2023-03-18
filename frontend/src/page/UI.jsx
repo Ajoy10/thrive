@@ -24,8 +24,10 @@ export default function UI() {
         commentCount={20}
         username="abcd"
       />
+      <br></br>
       <Button
         label="create a topic"
+
       />
     </div>
   );

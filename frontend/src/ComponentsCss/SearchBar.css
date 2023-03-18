@@ -1,7 +1,10 @@
-div {
-    background-color: red;
+input {
+    background-color: #3F4C51;
+    width: auto;
+    height: auto;
+
 }
 
-input {
-    background-color: #3F4C51
+div {
+    color: #FFFFFF;
 }

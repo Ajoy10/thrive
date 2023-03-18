@@ -8,18 +8,15 @@
     border-color: black;
     justify-content: space-between;
     align-items: center;
+    padding: 16px;
 
 }
 
 .thread-card-meta {
     display: flex;
     flex-direction: row;
+    gap: 8px;
 
 
 
-}
-
-
-.thread-card-meta-item {
-    margin: 10px;
 }
