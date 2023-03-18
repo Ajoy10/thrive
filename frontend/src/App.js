@@ -20,6 +20,7 @@ import Threads from "./page/Threads";
 import Navbar from "./components/Navbar";
 import CreateTopic from "./page/CreateTopic";
 import CreateThread from "./page/CreateThread";
+import SearchPage from "./page/SearchPage";
 
 function App() {
   const [userName, setUserName] = useState("");
@@ -58,6 +59,7 @@ function App() {
           >
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/search/" element={<SearchPage />} />
             <Route path="/topics/new" element={<CreateTopic />} />
             <Route path="/topics/:id" element={<Topic />} />
             <Route path="/threads/new" element={<CreateThread />} />

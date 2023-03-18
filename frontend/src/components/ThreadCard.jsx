@@ -1,6 +1,8 @@
 import { Icon, InlineIcon } from "@iconify/react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../ComponentsCss/ThreadCard.css";
+import format from "../formatTime";
 
 const ThreadCard = ({
   title,
@@ -11,6 +13,11 @@ const ThreadCard = ({
   id = null,
 }) => {
   const navigate = useNavigate();
+  const [formatedDate, setFormatedDate] = useState("");
+
+  useEffect(() => {
+    setFormatedDate(format(date));
+  }, [date]);
   return (
     <div
       className="thread-card"
@@ -23,7 +30,7 @@ const ThreadCard = ({
       <div className="thread-card-meta">
         <div className="thread-card-meta-item">
           <InlineIcon icon={"carbon:time"} />
-          <span>{date}</span>
+          <span>{formatedDate}</span>
         </div>
         <div className="thread-card-meta-item">
           <InlineIcon icon={"carbon:chat"} />

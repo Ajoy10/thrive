@@ -1,10 +1,26 @@
-.search-bar input {
-    background-color: #3F4C51;
-    width: auto;
-    height: auto;
-
-}
 
 div {
     color: #FFFFFF;
+}
+
+.search-bar{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.search-bar .button{
+    background-color: #509957;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 4px;
+}
+
+.search-bar input{
+    background-color: #3F4C51;
+
+    border: none;
+    color: white;
+    padding: 10px;
+    margin-right: 8px;
+    width: 100%;
 }

@@ -42,7 +42,13 @@ export default function Threads() {
   return (
     <section id="thread-page">
       <div className="current-thread">
-        {thread && <ThreadCard title={thread.title} content={thread.content} />}
+        {thread && (
+          <ThreadCard
+            title={thread.title}
+            content={thread.content}
+            date={thread.createdAt}
+          />
+        )}
       </div>
       <div className="reply-list">
         {comments.map((reply, ind) => {
@@ -51,6 +57,7 @@ export default function Threads() {
               content={reply.content}
               // username={"John doe"}
               key={ind}
+              date={reply.createdAt}
             />
           );
         })}

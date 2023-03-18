@@ -47,13 +47,14 @@ export default function Topic() {
               username={"John doe"}
               id={thread._id}
               key={id}
+              date={thread.createdAt}
             />
           );
         })}
       </div>
       <div className="create-thread-button">
         <Button
-          label={"Create button"}
+          label={"Create a thread"}
           icon={<></>}
           onClick={() => navigate(`/threads/new?topic=${id}`)}
         />
