@@ -1,0 +1,61 @@
+{
+  "Header": {
+    "title": "Building communities around shared interests",
+    "paragraph": "An app that can connect people with shared interests, allowing them to discover and share resources while creating and discussing their own topics."
+  },
+ 
+  
+
+  "Team": [
+    {
+      "img": "img/team/12.png",
+      "name": "Ajoy",
+      "job": "backend developer"
+    },
+    {
+      "img": "img/team/12.png",
+      "name": "Akash",
+      "job": "Senior Designer"
+    },
+    {
+      "img": "img/team/12.png",
+      "name": "Deep",
+      "job": "designer"
+    },
+    {
+      "img": "img/team/12.png",
+      "name": "samar",
+      "job": "documnetation"
+    }
+  ],
+  "Contact": {
+    "address": "MIT  ",
+    "phone": "+1 123 456 1234",
+    "email": "info@company.com",
+    "facebook": "fb.com",
+    "twitter": "twitter.com",
+    "youtube": "youtube.com"
+  },
+  "Features": [
+    {
+      "icon": "fa fa-comments-o",
+      "title": "Connect with people ",
+      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+    },
+    {
+      "icon": "fa fa-bullhorn",
+      "title": "post your doubt",
+      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+    },
+    {
+      "icon": "fa fa-group",
+      "title": "join groups",
+      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+    },
+    {
+      "icon": "fa fa-magic",
+      "title": "create groups",
+      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+    }
+  ]
+}

@@ -5,6 +5,8 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
 
+import Apple from "./page/Apple"
+
 import { auth } from "./firebase";
 
 import "./App.css";
@@ -26,6 +28,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
+          <Route path="/landing" element={<Apple />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/ui" element={<UI />} />

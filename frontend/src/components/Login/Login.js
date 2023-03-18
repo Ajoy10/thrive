@@ -38,7 +38,7 @@ function Login() {
   return (
     <div className={styles.container}>
       <div className={styles.innerBox}>
-        <h1 className={styles.heading}>Login</h1>
+        <h1 className={{color:"black"}}>Login</h1>
 
         <InputControl
           label="Email"
@@ -49,6 +49,7 @@ function Login() {
         />
         <InputControl
           label="Password"
+          type="password"
           onChange={(event) =>
             setValues((prev) => ({ ...prev, pass: event.target.value }))
           }

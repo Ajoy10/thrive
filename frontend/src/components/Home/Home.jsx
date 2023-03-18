@@ -6,6 +6,23 @@ import "../../ComponentsCss/Home.css"
 function Home(props) {
   return (
     <div className="home">
+      <div>
+      <div>
+        <h1>
+          <Link to="/login">Login</Link>
+        </h1>
+        <br />
+        <h1>
+          <Link to="/signup">Signup</Link>
+        </h1>
+      </div>
+
+      <br />
+      <br />
+      <br />
+
+      <h2>{props.name ? `Welcome - ${props.name}` : "Login please"}</h2>
+    </div>
       {/* <h3>Search Topics</h3> */}
     <section id="trending-topics-section-list">
       <h2>Trending Topics</h2>
