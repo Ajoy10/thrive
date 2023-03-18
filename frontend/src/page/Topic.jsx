@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ThreadCard from "../components/ThreadCard";
 
 import "./Topic.css";
 
 import config from "../config.json";
 import { AuthContext } from "../context/AuthContext";
+import Button from "../components/Button";
 
 export default function Topic() {
   const { id } = useParams();
@@ -31,6 +32,8 @@ export default function Topic() {
       .finally(setLoading(false));
   }, []);
 
+  const navigate = useNavigate();
+
   return (
     <section id="topic-page">
       <h2>{topicName || "Threads"}</h2>
@@ -47,6 +50,13 @@ export default function Topic() {
             />
           );
         })}
+      </div>
+      <div className="create-thread-button">
+        <Button
+          label={"Create button"}
+          icon={<></>}
+          onClick={() => navigate(`/threads/new?topic=${id}`)}
+        />
       </div>
     </section>
   );

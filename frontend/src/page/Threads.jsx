@@ -4,10 +4,11 @@ import { useParams } from "react-router-dom";
 import ThreadCard from "../components/ThreadCard";
 import ReplyCard from "../components/ReplyCard";
 
-import "./Topic.css";
+import "./Threads.css";
 
 import config from "../config.json";
 import { AuthContext } from "../context/AuthContext";
+import ReplyTo from "../components/ReplyTo";
 
 export default function Threads() {
   const { id } = useParams();
@@ -43,16 +44,20 @@ export default function Threads() {
       <div className="current-thread">
         {thread && <ThreadCard title={thread.title} content={thread.content} />}
       </div>
-      <div className="thread-list">
-        {comments.map((thread, id) => {
+      <div className="reply-list">
+        {comments.map((reply, ind) => {
           return (
             <ReplyCard
-              content={thread.content}
+              content={reply.content}
               // username={"John doe"}
-              key={id}
+              key={ind}
             />
           );
         })}
+      </div>
+
+      <div className="reply-section">
+        <ReplyTo threadId={id} />
       </div>
     </section>
   );

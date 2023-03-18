@@ -26,8 +26,8 @@ router.get("/:id", (req, res) => {
 // POST /posts
 router.post("/", (req, res) => {
   // Verify user can post i.e. logged in
-  const { name } = req.body;
-  CreateTopic(name)
+  const { name, description } = req.body;
+  CreateTopic(name, description)
     .then((result) => {
       res.send(result);
     })

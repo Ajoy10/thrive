@@ -19,13 +19,13 @@ export default function TopicCard({ title, desc, postCount, onlineCount, id }) {
         <p>
           <InlineIcon icon={"carbon:chat"} /> {postCount} posts
         </p>
-        <p>
+        {/* <p>
           <InlineIcon
             icon={"carbon:circle-solid"}
             style={{ color: "#509957" }}
           />{" "}
           {onlineCount} online
-        </p>
+        </p> */}
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import TopicCard from "../TopicCard";
 import "../../ComponentsCss/Home.css";
 
@@ -8,6 +8,7 @@ import config from "../../config.json";
 import axios from "axios";
 import { AuthContext } from "../../context/AuthContext";
 import Button from "../Button";
+import { InlineIcon } from "@iconify/react";
 
 function Home(props) {
   const { token } = useContext(AuthContext);
@@ -28,9 +29,24 @@ function Home(props) {
         console.log(err);
       });
   }, []);
+
+  const navigate = useNavigate();
+
+  const onAddTopicClick = () => {
+    navigate("/topics/new");
+  };
+
   return (
     <div className="home">
       {/* <h3>Search Topics</h3> */}
+
+      <div className="add-button">
+        <Button
+          label={"Add topic"}
+          icon={<InlineIcon icon={"carbon:plus"} />}
+          onClick={onAddTopicClick}
+        />
+      </div>
 
       <section id="trending-topics-section-list">
         <h2>Trending Topics</h2>
@@ -56,7 +72,7 @@ function Home(props) {
         </div>
       </section>
 
-      <section id="trending-topics-section-list">
+      {/* <section id="trending-topics-section-list">
         <h2>For you</h2>
         <div className="trending-topics-section-list">
           <TopicCard
@@ -72,7 +88,7 @@ function Home(props) {
             onlineCount={25}
           />
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

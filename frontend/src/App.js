@@ -18,6 +18,8 @@ import { AuthContext } from "./context/AuthContext";
 import Topic from "./page/Topic";
 import Threads from "./page/Threads";
 import Navbar from "./components/Navbar";
+import CreateTopic from "./page/CreateTopic";
+import CreateThread from "./page/CreateThread";
 
 function App() {
   const [userName, setUserName] = useState("");
@@ -56,7 +58,9 @@ function App() {
           >
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/topics/new" element={<CreateTopic />} />
             <Route path="/topics/:id" element={<Topic />} />
+            <Route path="/threads/new" element={<CreateThread />} />
             <Route path="/threads/:id" element={<Threads />} />
             <Route path="/ui" element={<UI />} />
             <Route path="/" element={<Home name={userName} />} />
